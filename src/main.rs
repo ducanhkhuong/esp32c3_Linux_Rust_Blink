@@ -14,8 +14,13 @@ fn main() -> ! {
     init_logger_from_env();
 
     loop {
-        led.toggle();
-        log::info!("LED is {:?}", led.is_set_high());
+        led.set_high();
+        log::info!("LED is {:?}", led.set_high());
+        delay.delay_millis(1000);
+
+        
+        led.set_low();
+        log::info!("LED is {:?}", led.set_low());
         delay.delay_millis(1000);
     }
 }
